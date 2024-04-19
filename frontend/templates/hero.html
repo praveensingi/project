@@ -1,0 +1,87 @@
+{% load static %}
+
+{% block styles %}
+<style>
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+            transform: translateY(50px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .hero-content {
+        animation: fadeIn 1s ease forwards;
+        max-width: 600px; /* Adjust the max-width as needed */
+        margin-left: auto;
+        margin-right: auto;
+        color: #333; /* Text color */
+    }
+
+    .hero-image {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        max-height: 800px; /* Adjust the max-height as needed */
+        overflow: hidden;
+        border-radius: 15px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Light shadow */
+    }
+
+    .hero-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease; /* Smooth transition */
+        filter: brightness(0.8) contrast(1.2) saturate(120%); /* Adjust filters for visual appeal */
+    }
+
+    .hero-image:hover img {
+        transform: scale(1.1); /* Enlarge image on hover */
+    }
+
+    .hero-image:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.8); /* Light background overlay */
+    }
+
+    .btn-primary {
+        transition: transform 0.3s ease;
+        background-color: #007bff; /* Button color */
+        border-color: #007bff; /* Button border color */
+    }
+
+    .btn-primary:hover {
+        transform: translateY(-3px);
+        background-color: #0056b3; /* Darker button color on hover */
+        border-color: #0056b3; /* Darker button border color on hover */
+    }
+</style>
+{% endblock %}
+
+<div class="container-fluid px-4 py-5" style="background-color: #f9f9f9;"> <!-- Light background color -->
+    <div class="row flex-lg-row align-items-center g-5 py-5" style="height: 800px;">
+        <div class="col-lg-6">
+            <div class="hero-content">
+                <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">Strategic Consulting Solutions Tailored to Your Success</h1>
+                <p class="lead">Unlock your business's potential with our expert consulting services. We provide tailored solutions to drive growth, streamline operations, and maximize profitability. Our team brings years of industry experience and proven strategies to help you navigate challenges and seize opportunities.</p>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                    <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Discover Our Services</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="hero-image">
+                <img src="{% static 'images/hero.jpg' %}" class="d-block mx-lg-auto img-fluid rounded" alt="Consulting Services">
+            </div>
+        </div>
+    </div>
+</div>
