@@ -33,4 +33,4 @@ EXPOSE 8000
 ENTRYPOINT ["/usr/src/app/entrypoint.sh"]
 
 # Start the application
-CMD ["gunicorn", "--bind", "0.0.0.0:8000", "labeler.wsgi:application"]
+CMD ["gunicorn", "--bind", "0.0.0.0:8000", "website.wsgi:application"]
