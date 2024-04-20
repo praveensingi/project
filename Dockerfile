@@ -23,6 +23,9 @@ RUN chmod +x /usr/src/app/entrypoint.sh
 # Copy project
 COPY . /app/
 
+# Install gunicorn
+RUN pip install gunicorn
+
 # Expose the port the app runs on
 EXPOSE 8000
 
