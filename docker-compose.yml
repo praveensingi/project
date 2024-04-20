@@ -3,7 +3,7 @@ version: '3.8'
 services:
   web:
     build: .
-    command: gunicorn labeler.wsgi:application --bind 0.0.0.0:8000 -w 4
+    command: gunicorn website.wsgi:application --bind 0.0.0.0:8000 -w 4
     volumes:
       - .:/usr/src/app/
       - static_volume:/usr/src/app/staticfiles
