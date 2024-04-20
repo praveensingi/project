@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    command: gunicorn labeler.wsgi:application --bind 0.0.0.0:8000 -w 4
+    volumes:
+      - .:/usr/src/app/
+      - static_volume:/usr/src/app/staticfiles
+      - media_volume:/usr/src/app/media
+    ports:
+      - "8000:8000"
+    networks:
+      - backend
+
+  nginx:
+    image: nginx:latest
+    ports:
+      - "1337:80"
+    volumes:
+      - static_volume:/usr/src/app/staticfiles
+      - media_volume:/usr/src/app/media
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - web
+    networks:
+      - backend
+
+networks:
+  backend:
+    driver: bridge
+
+volumes:
+  static_volume:
+  media_volume:
