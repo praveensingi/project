@@ -1,9 +1,314 @@
 {% extends 'base.html' %}
 
 {% load static %}
+{% block styles %}
+<style>
+        .hero-section {
+        background-color: #f9f9f9; /* Light gray background for the hero section */
+        transition: background-color 0.3s ease-in-out;
+        }
+
+        .hero-content h1, .hero-content p {
+        animation: fadeInUp 0.8s ease-out forwards;
+        opacity: 0; /* Start elements as invisible for animation */
+        }
+
+        .hero-content ul {
+        animation: fadeIn 1s ease-out 0.5s forwards;
+        opacity: 0; /* Start elements as invisible for animation */
+        }
+
+        .btn-primary {
+        transition: all 0.3s ease-in-out;
+        }
+
+        .btn-primary:hover {
+        transform: scale(1.1);
+        background-color: #003975; /* Darker shade on hover for tactile feedback */
+        }
+
+        @keyframes fadeInUp {
+        from {
+            transform: translateY(20px);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        }
+
+        @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+        }
+
+        .hero-image img {
+        transition: transform 0.5s ease-in-out;
+        }
+
+        .hero-image img:hover {
+        transform: scale(1.05); /* Slight scale on hover for a dynamic feel */
+        }
+
+
+    .btn-primary {
+        transition: transform 0.3s ease;
+        background-color: #007bff; /* Button color */
+        border-color: #007bff; /* Button border color */
+    }
+
+    .btn-primary:hover {
+        transform: translateY(-3px);
+        background-color: #0056b3; /* Darker button color on hover */
+        border-color: #0056b3; /* Darker button border color on hover */
+    }
+
+
+    /* About Us Section */
+    .about-us {
+        background-color: #f8f9fa;
+        padding: 50px 0;
+    }
+
+    .animated-img {
+        transition: transform 0.3s ease;
+        border-radius: 8px;
+    }
+
+    .animated-img:hover {
+        transform: scale(1.03);
+    }
+
+    /* Typography */
+    h2, h3, h4 {
+        color: #0056b3;
+    }
+
+    .lead {
+        font-size: 1.2em;
+        color: #555;
+    }
+
+    .timeline {
+        list-style: none;
+        padding: 0;
+    }
+
+    .milestone {
+        position: relative;
+        margin-bottom: 20px;
+        padding: 20px;
+        background-color: #fff;
+        border-left: 5px solid #0056b3;
+        transition: transform 0.5s ease, background-color 0.5s ease;
+    }
+
+    .milestone:hover {
+        transform: translateY(-10px);
+        background-color: #f0f0f0;
+    }
+
+    .animated-entry {
+        opacity: 0;
+        animation: fadeInUp 1s forwards;
+        animation-delay: var(--animation-delay);
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .heading-line {
+        width: 10%;  /* Width of the line as a percentage of its container */
+        height: 3px;  /* Thickness of the line */
+        background-color: #0056b3;  /* Color of the line */
+        margin: 10px auto 20px;  /* Center the line horizontally with margin */
+        transition: width 0.5s ease;  /* Animation effect for the line */
+    }
+
+    h3:hover + .heading-line {
+        width: 30%;  /* Line expands when the heading is hovered */
+    }
+
+    .service-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: none;
+            border-radius: 0.5rem;
+    }
+
+    .service-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    .card-title {
+        color: #0056b3; /* Primary color, adjust as needed */
+    }
+    i {
+        color: #0056b3; /* Icon color to match the theme */
+    }
+
+    .floating-icons {
+        position: relative;
+        height: 300px; /* Adjust based on the space next to the form */
+    }
+
+    .floating-icons i {
+        position: absolute;
+        opacity: 0;
+        animation: floatAnim ease-in-out infinite;
+    }
+
+    @keyframes floatAnim {
+        0%, 100% {
+            transform: translateY(0);
+            opacity: 0;
+        }
+        25%, 75% {
+            opacity: 1;
+        }
+        50% {
+            transform: translateY(-20px);
+        }
+    }
+
+    .icon-square {
+        width: 48px; /* Size of the icon container */
+        height: 48px; /* Size of the icon container */
+        background-color: #f0f2f5; /* Light grey background */
+        color: #0d6efd; /* Bootstrap primary blue */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 0.5rem; /* Rounded corners for the icon background */
+        margin-right: 16px; /* Space between icon and text */
+    }
+    .contact-info div {
+        padding: 20px;
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        background: #fff; /* White background for the blocks */
+        border-radius: 10px; /* Rounded corners */
+        margin-bottom: 20px; /* Space between items */
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    }
+    .contact-info div:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .map-responsive {
+        overflow: hidden;
+        padding-bottom: 56.25%;
+        position: relative;
+        height: 0;
+    }
+
+    .map-responsive iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .input-group-text, .form-control {
+        border-radius: 0.5rem;
+        transition: border 0.3s ease-in-out;
+    }
+
+    .form-control:focus, .btn-primary:focus {
+        box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.5);
+    }
+
+    .btn-primary1 {
+        font-size: 1.1rem;                  /* Clear and readable font size */
+        color: white;                       /* White text for contrast */
+        background-color: #0056b3;          /* Primary button color */
+        border: none;                       /* No border for a cleaner look */
+        padding: 12px 20px;                 /* Adequate padding for a good tactile area */
+        border-radius: 8px;                 /* Rounded corners for modern aesthetics */
+        transition: all 0.3s ease;          /* Smooth transition for all changes */
+        display: inline-flex;               /* Flex to align icon and text */
+        align-items: center;                /* Align items for vertical centering */
+        justify-content: center;            /* Center content horizontally */
+    }
+
+    .btn-primary1 i {
+        margin-right: 8px;                  /* Space between icon and text */
+    }
+
+    .btn-primary1:hover, .btn-primary1:focus {
+        background-color: #0056b3;          /* Darker shade on hover/focus for feedback */
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* More pronounced shadow on hover for depth */
+        transform: translateY(-2px);        /* Slight lift effect */
+    }
+
+
+
+    .contact-section .col-md-6 {
+        margin-bottom: 20px;
+    }
+
+    /* Enhanced Focus Styles */
+    .form-control:focus {
+        border-color: #80bdff;
+        outline: 0;
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+    }
+
+    /* Consistency with icon and input interaction */
+    .input-group-text {
+        background-color: #f8f9fa;
+        color: #495057;
+    }
+
+    /* Responsive Design Considerations */
+    @media (max-width: 768px) {
+        .map-responsive iframe {
+            height: 200px; /* Smaller map on smaller devices */
+        }
+    }
+</style>
+{% endblock %}
 
 {% block content %}
     {% include 'hero.html' %}
+
+    {% include 'aboutus.html' %}
+
+    {% include 'services.html' %}
+    
+    {% include 'contactus.html' %}
+{% endblock %}
+
+{% block scripts %}
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+
+            AOS.init({
+                offset: 200,  // offset (in px) from the original trigger point
+                duration: 600, // values from 0 to 3000, with step 50ms
+                easing: 'ease-in-sine', // default easing for AOS animations
+                once: false, // whether animation should happen only once - while scrolling down
+                mirror: false, // whether elements should animate out while scrolling past them
+            });
+
+            // Milestone animations with delays
+            const milestones = document.querySelectorAll('.milestone');
+            milestones.forEach((milestone, index) => {
+                // Set a custom property for animation delay
+                milestone.style.setProperty('--animation-delay', `${index * 0.2}s`);
+            });
+        });
+    </script>
+
 {% endblock %}
 
 

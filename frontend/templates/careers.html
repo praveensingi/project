@@ -1,0 +1,211 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block title %}
+careers
+{% endblock %}
+{% block styles %}
+<style>
+    .job-title {
+        font-weight: bold;
+        font-size: 1.25rem;
+    }
+    .job-description {
+        margin-bottom: 1.5rem;
+    }
+    .apply-button {
+        color: #fff;
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+
+<section class="careers-section bg-light" id="careers-component"></section>
+    <div class="container mt-5 mb-5">
+        <h1 class="text-center">Join Our Team</h1>
+        <p class="lead text-center">Explore the opportunities to take your career to the next level.</p>
+
+        <section class="bg-light py-5">
+            <div class="container">
+                <h2 class="text-center mb-4">Why Join Us?</h2>
+                <div class="row row-cols-1 row-cols-md-3 g-4">
+                    <!-- Benefit 1: Competitive Salary -->
+                    <div class="col">
+                        <div class="card h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-money-bill-wave fa-3x mb-3 text-primary"></i>
+                                <h5 class="card-title">Competitive Salary</h5>
+                                <p class="card-text">We offer competitive salaries to attract and retain top talent in the industry.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Benefit 2: Health Insurance -->
+                    <div class="col">
+                        <div class="card h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-medkit fa-3x mb-3 text-primary"></i>
+                                <h5 class="card-title">Health Insurance</h5>
+                                <p class="card-text">Enjoy comprehensive health insurance coverage for you and your family.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Benefit 3: Flexible Work Schedule -->
+                    <div class="col">
+                        <div class="card h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-clock fa-3x mb-3 text-primary"></i>
+                                <h5 class="card-title">Flexible Work Schedule</h5>
+                                <p class="card-text">We offer flexible work schedules to accommodate your personal and professional needs.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Benefit 4: Immigration Support -->
+                    <div class="col">
+                        <div class="card h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-passport fa-3x mb-3 text-primary"></i>
+                                <h5 class="card-title">Immigration Support</h5>
+                                <p class="card-text">We provide assistance with immigration processes and support for international employees.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Benefit 5: Housing Support -->
+                    <div class="col">
+                        <div class="card h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-home fa-3x mb-3 text-primary"></i>
+                                <h5 class="card-title">Housing Support</h5>
+                                <p class="card-text">Get help with finding suitable housing options in the area.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Add more benefits here -->
+                </div>
+            </div>
+        </section>        
+
+        <section class="mt-5">
+            <h2 class="text-center mb-4">Current Openings</h2>
+
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+                <!-- Job 1: Software Developer -->
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Software Developer</h5>
+                            <p class="card-text">As a software developer, you'll work on cutting-edge projects alongside a team of driven professionals dedicated to innovation and quality. We're looking for candidates with experience in web technologies and a passion for solving complex problems.</p>
+                            <a href="mailto:careers@example.com?subject=Application for Software Developer" class="btn btn-primary">Apply Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Job 2: Web Developer -->
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Web Developer</h5>
+                            <p class="card-text">Join our team as a web developer and help us create scalable web applications designed for optimal user experience. Ideal candidates will have experience with front-end and back-end technologies.</p>
+                            <a href="mailto:careers@example.com?subject=Application for Web Developer" class="btn btn-primary">Apply Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Job 3: Mobile App Developer -->
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Mobile App Developer</h5>
+                            <p class="card-text">We're seeking a mobile app developer to create robust applications for iOS and Android platforms. This role involves collaborating with cross-functional teams to deliver high-quality mobile solutions.</p>
+                            <a href="mailto:careers@example.com?subject=Application for Mobile App Developer" class="btn btn-primary">Apply Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Job 4: AI Specialist -->
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">AI Specialist</h5>
+                            <p class="card-text">Join our team as an AI specialist and contribute to the development of advanced AI solutions that automate processes and optimize operations. Ideal candidates will have experience in machine learning and natural language processing.</p>
+                            <a href="mailto:careers@example.com?subject=Application for AI Specialist" class="btn btn-primary">Apply Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Job 5: Cloud Solutions Architect -->
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Cloud Solutions Architect</h5>
+                            <p class="card-text">We're looking for a cloud solutions architect to design and implement secure and scalable cloud technologies that enhance collaboration and streamline operations. Ideal candidates will have experience with cloud platforms like AWS, Azure, or Google Cloud.</p>
+                            <a href="mailto:careers@example.com?subject=Application for Cloud Solutions Architect" class="btn btn-primary">Apply Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Job 6: DevOps Engineer -->
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">DevOps Engineer</h5>
+                            <p class="card-text">Join our team as a DevOps engineer and play a key role in integration and continuous delivery strategies to ensure fast deployment cycles. Ideal candidates will have experience with CI/CD pipelines and infrastructure automation.</p>
+                            <a href="mailto:careers@example.com?subject=Application for DevOps Engineer" class="btn btn-primary">Apply Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Job 7: Salesforce Developer -->
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Salesforce Developer</h5>
+                            <p class="card-text">We're seeking a Salesforce developer to customize and enhance Salesforce solutions to improve customer relationship management and operational efficiency. Ideal candidates will have experience with Apex, Visualforce, and Lightning components.</p>
+                            <a href="mailto:careers@example.com?subject=Application for Salesforce Developer" class="btn btn-primary">Apply Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Job 8: ServiceNow Developer -->
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">ServiceNow Developer</h5>
+                            <p class="card-text">Join our team as a ServiceNow developer and contribute to streamlined workflows and automated IT service management. Ideal candidates will have experience with ServiceNow development and administration.</p>
+                            <a href="mailto:careers@example.com?subject=Application for ServiceNow Developer" class="btn btn-primary">Apply Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Job 9: Business Analyst -->
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Business Analyst</h5>
+                            <p class="card-text">We're looking for a business analyst to analyze data and provide insights to boost strategic decisions and enhance market competitiveness. Ideal candidates will have experience with data analytics and business intelligence tools.</p>
+                            <a href="mailto:careers@example.com?subject=Application for Business Analyst" class="btn btn-primary">Apply Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Job 10: Cybersecurity Analyst -->
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Cybersecurity Analyst</h5>
+                            <p class="card-text">Join our team as a cybersecurity analyst and contribute to protecting our systems and data from cyber threats. Ideal candidates will have experience with cybersecurity tools and techniques.</p>
+                            <a href="mailto:careers@example.com?subject=Application for Cybersecurity Analyst" class="btn btn-primary">Apply Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+
+{% endblock %}
